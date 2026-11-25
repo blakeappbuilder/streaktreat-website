@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Open in StreakTreat</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<!-- On an iPhone with StreakTreat installed, tapping the email link opens the app directly and this page
+     never shows. It's for people who opened the link on a computer, or before installing the app. -->
+<main class="card">
+  <div class="logo" aria-hidden="true">📱</div>
+  <h1>Open this link on your iPhone</h1>
+  <p id="why">This link finishes setting up your StreakTreat account, so it needs the app. Open the email on the iPhone where StreakTreat is installed and tap the button there.</p>
+  <a class="button" id="open" href="#" hidden>Open StreakTreat</a>
+  <small>Links work once and expire after a while. If this one has expired, ask the app for a new email.</small>
+</main>
+<script>
+  // On an iPhone, offer to open the app directly (in case the link was opened inside another app's browser).
+  if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+    document.getElementById("why").textContent =
+      "If StreakTreat is installed, tap the button to finish in the app. If it isn't installed yet, install it first, then tap the link in the email again.";
+    var open = document.getElementById("open");
+    open.href = "streaktreat://auth/confirm" + window.location.search;
+    open.hidden = false;
+  }
+</script>
+</body>
+</html>

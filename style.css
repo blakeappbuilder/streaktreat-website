@@ -1,0 +1,14 @@
+:root { color-scheme: light dark; --indigo: #5466ff; --purple: #a84df5; }
+* { box-sizing: border-box; }
+body { margin: 0; font: 17px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+       background: #f2f2f7; color: #1c1c1e; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
+@media (prefers-color-scheme: dark) { body { background: #000; color: #f2f2f7; } .card { background: #1c1c1e; } }
+.card { background: #fff; border-radius: 24px; padding: 36px 28px; max-width: 460px; width: 100%; text-align: center;
+        box-shadow: 0 10px 40px rgba(84, 102, 255, 0.12); }
+.logo { width: 76px; height: 76px; border-radius: 50%; margin: 0 auto 18px; display: flex; align-items: center; justify-content: center;
+        background: linear-gradient(135deg, var(--indigo), var(--purple)); color: #fff; font-size: 38px; }
+h1 { font-size: 26px; margin: 0 0 8px; }
+p { color: #8e8e93; margin: 0 0 16px; }
+.button { display: inline-block; margin-top: 8px; padding: 14px 28px; border-radius: 14px; color: #fff; font-weight: 600; text-decoration: none;
+          background: linear-gradient(135deg, var(--indigo), var(--purple)); }
+small { display: block; margin-top: 22px; color: #8e8e93; font-size: 13px; }
