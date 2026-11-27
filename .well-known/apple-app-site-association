@@ -4,7 +4,7 @@
       {
         "appIDs": ["YZ49AVC79K.com.streaktreat.app"],
         "components": [
-          { "/": "/auth/*", "comment": "Links in StreakTreat emails: confirm, reset password, change email" }
+          { "/": "/auth/*", "comment": "Links in Onday emails: confirm, reset password, change email" }
         ]
       }
     ]
