@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>A workout shared from Onday</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<!-- On an iPhone with Onday installed, a share link opens the app directly and this page never shows.
+     The workout itself is in the part after #, which browsers never send to this website. -->
+<main class="card">
+  <div class="logo" aria-hidden="true">🏋️</div>
+  <h1>Someone shared a workout with you</h1>
+  <p id="why">Open this link on an iPhone with Onday to add it to your workouts.</p>
+  <a class="button" id="open" href="#" hidden>Open in Onday</a>
+  <small>Don't have Onday yet? It's coming soon to the App Store. Install it, then tap the link again.</small>
+</main>
+<script>
+  if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+    document.getElementById("why").textContent =
+      "If Onday is installed, tap the button to add this workout. If it isn't, install it first, then tap the link again.";
+    var open = document.getElementById("open");
+    open.href = "streaktreat://share" + window.location.hash;
+    open.hidden = false;
+  }
+</script>
+</body>
+</html>
